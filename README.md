@@ -9,5 +9,5 @@ See `bench.py`. Wall-clock time to compute features for 1000 second waveform:
 Implementation | Time (Seconds)
 ---|---
 kaldifeat | 10.6698
-kali-native-feat | 1.5029
+kali-native-feat | 0.7778
 knf | 0.3258

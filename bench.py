@@ -43,8 +43,9 @@ def main():
     opts.mel_opts.debug_mel = False
 
     fbank = knf.OnlineFbank(opts)
+    samples_list = samples.tolist()
     start = time.time()
-    fbank.accept_waveform(sampling_rate, samples.tolist())
+    fbank.accept_waveform(sampling_rate, samples_list)
     end = time.time()
     print("kali-native-feat", end - start)
 
