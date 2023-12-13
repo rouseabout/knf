@@ -278,7 +278,6 @@ static int frames_size(const Frames * s)
 
 static void frames_push(Frames * s, Frame * frame)
 {
-    Frame ** root_ptr = &s->root;
     frame->next = NULL;
     if (!s->root)
         s->root = frame;
