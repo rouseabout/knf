@@ -242,6 +242,7 @@ struct Frame {
 typedef struct {
     Frame * root;
     int base_index;
+    Frame * last;
 } Frames;
 
 static Frame * frame_alloc()
@@ -255,6 +256,7 @@ static void frames_init(Frames * s)
 {
     s->root = NULL;
     s->base_index = 0;
+    s->last = NULL;
 }
 
 static void frames_deinit(Frames * s)
@@ -277,10 +279,12 @@ static int frames_size(const Frames * s)
 static void frames_push(Frames * s, Frame * frame)
 {
     Frame ** root_ptr = &s->root;
-    while (*root_ptr)
-        root_ptr = &(*root_ptr)->next;
     frame->next = NULL;
-    *root_ptr = frame;
+    if (!s->root)
+        s->root = frame;
+    else
+        s->last->next = frame;
+    s->last = frame;
 }
 
 static void frames_pop(Frames * s, int nframes)
