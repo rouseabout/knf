@@ -27,6 +27,7 @@ def main():
     opts.mel_opts.num_bins = 80
     opts.frame_opts.snip_edges = False
     opts.mel_opts.debug_mel = False
+    opts.mel_opts.high_freq = -400
 
     online_fbank = kaldifeat.OnlineFbank(opts)
     start = time.time()
@@ -41,6 +42,7 @@ def main():
     opts.mel_opts.num_bins = 80
     opts.frame_opts.snip_edges = False
     opts.mel_opts.debug_mel = False
+    opts.mel_opts.high_freq = -400
 
     fbank = knf.OnlineFbank(opts)
     samples_list = samples.tolist()

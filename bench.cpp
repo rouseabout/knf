@@ -12,6 +12,7 @@ int main()
     opts.frame_opts.snip_edges = false;
     opts.frame_opts.samp_freq = 16000;
     opts.mel_opts.num_bins = 80;
+    opts.mel_opts.high_freq = -400;
     knf::OnlineGenericBaseFeature<knf::FbankComputer> k1(opts);
 
     KNF * k2 = knf_create(16000, 80);

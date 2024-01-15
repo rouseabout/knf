@@ -137,7 +137,7 @@ static void mel_init(Fbank * s, float sample_freq, int window_length_padded)
     int num_fft_bins = window_length_padded / 2;
     float fft_bin_width = sample_freq / window_length_padded;
     float mel_low_freq = MelScale(20.0f);
-    float mel_high_freq = MelScale(0.5f * sample_freq);
+    float mel_high_freq = MelScale(0.5f * sample_freq - 400.0f);
     float mel_freq_delta = (mel_high_freq - mel_low_freq) / (NB_MEL_BINS + 1);
 
     float * this_bin;

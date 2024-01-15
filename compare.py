@@ -26,6 +26,7 @@ def main():
     opts.mel_opts.num_bins = 80
     opts.frame_opts.snip_edges = False
     opts.mel_opts.debug_mel = False
+    opts.mel_opts.high_freq = -400
 
     fbank = knf.OnlineFbank(opts)
     fbank.accept_waveform(sampling_rate, samples.tolist())
